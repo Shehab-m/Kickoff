@@ -1,7 +1,7 @@
-package com.cheesecake.domain.usecases
+package com.cheesecake.usecases
 
 import com.cheesecake.data.repository.Repository
-import com.cheesecake.domain.models.Team
+import com.cheesecake.models.TeamEntity
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
@@ -13,7 +13,7 @@ class GetAllTeamsInLeagueWithSeason @Inject constructor(
     suspend operator fun invoke(leagueId: Int, season: Int) =
          repository.getTeamsByLeagueAndSeason(leagueId, season).map { localTeams ->
              localTeams.map {
-                 Team(
+                 TeamEntity(
                      teamId = it.teamId,
                      teamName = it.teamName,
                      founded = it.founded,

@@ -1,10 +1,10 @@
-package com.cheesecake.ui
+package com.cheesecake.ui.fragment.leagueTeams
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.cheesecake.domain.models.Team
-import com.cheesecake.domain.usecases.GetAllTeamsInLeagueWithSeason
+import com.cheesecake.models.TeamEntity
+import com.cheesecake.usecases.GetAllTeamsInLeagueWithSeason
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -15,7 +15,7 @@ import javax.inject.Inject
 
 data class LeagueTeamsUIState(
     val isLoading: Boolean = true,
-    val data: List<Team> = emptyList(),
+    val data: List<TeamEntity> = emptyList(),
     val isError: String = "Error"
 )
 

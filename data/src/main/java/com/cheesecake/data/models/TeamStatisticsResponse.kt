@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class TeamStatisticsResponse(
     @SerializedName("league") val league: League,
-    @SerializedName("team") val team: Team,
+    @SerializedName("team") val teamResponse: TeamResponse,
     @SerializedName("form") val form: String,
     @SerializedName("fixtures") val fixtures: Fixtures,
     @SerializedName("goals") val goals: Goals,
@@ -24,7 +24,7 @@ data class TeamStatisticsResponse(
         @SerializedName("season") val season: Int
     )
 
-    data class Team(
+    data class TeamResponse(
         @SerializedName("id") val id: Int,
         @SerializedName("name") val name: String,
         @SerializedName("logo") val logo: String

@@ -8,11 +8,5 @@ import javax.inject.Inject
 
 class TransfersRepository @Inject constructor(private val transferApiService: ITransferApiService) {
 
-    suspend fun getTransfersByPlayerId(playerId: Int): Response<BaseResponse<SingleTransferResponse>> {
-        return transferApiService.getTransfersByPlayerId(playerId)
-    }
 
-    suspend fun getTransfersByTeamId(teamId: Int): Response<BaseResponse<SingleTransferResponse>> {
-        return transferApiService.getTransfersByTeamId(teamId)
-    }
 }

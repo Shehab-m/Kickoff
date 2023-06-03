@@ -1,7 +1,6 @@
-package com.cheesecake.ui.utils
+package com.cheesecake.ui.util
 
 import android.util.Log
-import android.view.View
 import android.widget.ImageView
 import android.widget.ProgressBar
 import androidx.core.view.isVisible

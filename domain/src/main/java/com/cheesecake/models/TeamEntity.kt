@@ -1,6 +1,6 @@
-package com.cheesecake.domain.models
+package com.cheesecake.models
 
-data class Team(
+data class TeamEntity(
     val teamId: Int,
     val teamName: String,
     val founded: Int,

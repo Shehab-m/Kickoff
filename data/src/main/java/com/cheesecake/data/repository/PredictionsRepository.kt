@@ -7,7 +7,5 @@ import retrofit2.Response
 import javax.inject.Inject
 
 class PredictionsRepository @Inject constructor(private val predictionsApiService: IPredictionsApiService) {
-    suspend fun getPredictionsByFixtureId(fixtureId: Int): Response<BaseResponse<SinglePredictionsResponse>> {
-        return predictionsApiService.getPredictionsByFixtureId(fixtureId)
-    }
+
 }

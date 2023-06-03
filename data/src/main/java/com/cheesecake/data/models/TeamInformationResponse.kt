@@ -1,17 +1,16 @@
 package com.cheesecake.data.models
 
 
-import androidx.room.PrimaryKey
-import com.cheesecake.data.local.models.LocalTeam
+import com.cheesecake.data.local.models.TeamLocalDto
 import com.google.gson.annotations.SerializedName
 
 data class TeamInformationResponse(
     @SerializedName("team")
-    val team: Team,
+    val teamResponse: TeamResponse,
     @SerializedName("venue")
     val venue: Venue
 ) {
-    data class Team(
+    data class TeamResponse(
         @SerializedName("id")
         val id: Int,
         @SerializedName("name")
@@ -46,12 +45,12 @@ data class TeamInformationResponse(
     )
 }
 
-fun TeamInformationResponse.toLocal() = LocalTeam(
-    teamId = this.team.id,
-    teamName = this.team.name,
-    founded = this.team.founded,
-    teamCountry = this.team.country,
+fun TeamInformationResponse.toLocal() = TeamLocalDto(
+    teamId = this.teamResponse.id,
+    teamName = this.teamResponse.name,
+    founded = this.teamResponse.founded,
+    teamCountry = this.teamResponse.country,
     venueCapacity = this.venue.capacity,
     venueName = this.venue.name,
-    imageUrl = this.team.logo
+    imageUrl = this.teamResponse.logo
 )
