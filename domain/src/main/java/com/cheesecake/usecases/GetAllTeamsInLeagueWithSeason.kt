@@ -1,5 +1,6 @@
 package com.cheesecake.usecases
 
+import com.cheesecake.data.local.models.TeamLocalDto
 import com.cheesecake.data.repository.Repository
 import com.cheesecake.models.TeamEntity
 import kotlinx.coroutines.flow.map
@@ -7,7 +8,6 @@ import javax.inject.Inject
 
 class GetAllTeamsInLeagueWithSeason @Inject constructor(
     private val repository: Repository,
-
     ) {
 
     suspend operator fun invoke(leagueId: Int, season: Int) =
@@ -24,6 +24,10 @@ class GetAllTeamsInLeagueWithSeason @Inject constructor(
                  )
              }
          }
+//        fun TeamLocalDto.toEntity(): TeamEntity {
+//            return
+//        }
+
 
 //    suspend operator fun invoke(leagueId: Int, season: Int) {
 //        try {
